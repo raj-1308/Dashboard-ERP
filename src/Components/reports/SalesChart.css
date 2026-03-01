@@ -1,0 +1,39 @@
+.sales-chart-card {
+  background: linear-gradient(180deg, #020617, #020617);
+  border-radius: 18px;
+  padding: 24px;
+  margin-top: 10px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+
+.sales-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sales-chart-header h3 {
+  color: #f8fafc;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.sales-chart-header select {
+  padding: 8px 14px;
+  background: #020617;
+  color: #f8fafc;
+  border: 1px solid #1e293b;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+}
+
+.sales-chart-header select:hover {
+  border-color: #2563eb;
+}
+
+.sales-chart-body {
+  width: 100%;
+  height: 320px;
+}

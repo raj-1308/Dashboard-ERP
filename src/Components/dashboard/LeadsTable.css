@@ -1,0 +1,193 @@
+/* Sticky header */
+.dark-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Zebra rows */
+.dark-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+/* Lead user */
+.lead-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.lead-user span {
+  display: block;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb, #1e40af);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* Phone */
+.phone-link {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+.phone-link:hover {
+  text-decoration: underline;
+}
+
+/* Actions */
+.center {
+  text-align: center;
+}
+
+.actions {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.dark-table tbody tr:hover .actions {
+  opacity: 1;
+}
+
+.actions button {
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  margin: 0 4px;
+}
+
+.btn-view {
+  background: #1e40af;
+  color: #fff;
+}
+
+.btn-call {
+  background: #065f46;
+  color: #d1fae5;
+}
+.btn-delete {
+  background: #b91c1c;
+  color: #fee2e2;
+}
+.btn-call:hover {
+  background: #047857;
+}
+.btn-view:hover {
+  background: #1d4ed8;
+}
+.btn-delete:hover {
+  background: #991b1b;
+}
+/* Status Badge */
+.status-badge {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+}
+.status-contacted {
+  background-color: #16a34a;
+}
+.status-pending {
+  background-color: #f59e0b;
+}
+.status-new {
+  background-color: #3b82f6;
+}
+.status-lost {
+  background-color: #ef4444;
+}
+.status-converted {
+  background-color: #8b5cf6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .lead-user span {
+    display: none;
+  }
+  .actions button {
+    padding: 4px 8px;
+    font-size: 10px;
+    margin: 0 2px;
+  }
+  .avatar {
+    width: 28px;
+    height: 28px;
+    font-size: 14px;
+  }
+}
+
+/* Table styles */
+.dark-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #1e293b;
+  color: #f1f5f9;
+}
+.dark-table th,
+.dark-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #334155;
+  text-align: left;
+}
+.dark-table th {
+  background-color: #0f172a;
+  font-weight: 600;
+  font-size: 14px;
+}                           
+.dark-table td {
+  font-size: 13px;
+}
+.dark-table tbody tr:hover {
+  background-color: #334155;
+}
+
+/* Scrollbar styling */
+.dark-table tbody {
+  display: block;
+  max-height: 400px;
+  overflow-y: auto;
+}
+.dark-table tbody::-webkit-scrollbar {
+  width: 8px;
+}
+.dark-table tbody::-webkit-scrollbar-thumb {
+  background-color: #475569;
+  border-radius: 4px;
+}
+.dark-table tbody::-webkit-scrollbar-thumb:hover {
+  background-color: #64748b;
+}
+.dark-table thead,
+.dark-table tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+.dark-table thead {
+  width: calc(100% - 8px);
+}
+.dark-table tbody tr {
+  width: calc(100% - 8px);
+}
+
+/* Hover effect for rows */
+.dark-table tbody tr:hover {
+  background-color: #334155;
+}
+/* Sticky header */

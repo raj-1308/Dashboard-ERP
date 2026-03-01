@@ -1,0 +1,88 @@
+.report-kpi-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.report-kpi-card {
+  background: linear-gradient(180deg, #020617, #020617);
+  border-radius: 16px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+
+.report-kpi-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+.report-kpi-title {
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.report-kpi-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #f8fafc;
+  letter-spacing: 0.5px;
+}
+
+.report-kpi-sub {
+  margin-top: 6px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Accent glow colors */
+
+.report-kpi-card::before {
+  content: "";
+  position: absolute;
+  top: -40%;
+  right: -40%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  filter: blur(50px);
+  opacity: 0.6;
+}
+
+.report-kpi-card.blue::before {
+  background: #2563eb;
+}
+
+.report-kpi-card.green::before {
+  background: #22c55e;
+}
+
+.report-kpi-card.red::before {
+  background: #ef4444;
+}
+
+.report-kpi-card.purple::before {
+  background: #a855f7;
+}
+.report-kpi-card.yellow::before {
+  background: #facc15;
+}
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(14px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+.report-kpi-card {
+    animation: fadeIn 0.6s ease;
+}

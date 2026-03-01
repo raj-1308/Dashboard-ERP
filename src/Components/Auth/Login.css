@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+html, body, #root {
+    width: 100%;
+  height: 100%;
+}
+
+
+.auth-wrapper {
+  min-height: 100vh;
+    background: url(https://images.unsplash.com/photo-1522071820081-009f0129c71c
+) center/cover no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 20, 40, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.auth-card {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 44px 38px 40px;
+  border-radius: 18px;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+  animation: appear 0.8s ease forwards;
+}
+
+.brand {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.brand h2 {
+  font-size: 1.7rem;
+  color: #0f172a;
+  margin-bottom: 6px;
+  letter-spacing: 0.3px;
+}
+
+.brand p {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+.auth-form {
+  width: 100%;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.field input {
+  width: 100%;
+  padding: 16px 14px;
+  border-radius: 10px;
+  border: 1px solid #d1d9e6;
+  font-size: 0.95rem;
+  outline: none;
+  background: #f8fafc;
+  color: #111827;
+  transition: all 0.3s ease;
+}
+
+.field input:focus {
+  border-color: #2563eb;
+  background: white;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.field label {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  background: white;
+  padding: 0 6px;
+  font-size: 0.8rem;
+  color: #8b95a5;
+  pointer-events: none;
+  transition: 0.25s ease;
+}
+
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+  top: -8px;
+  font-size: 0.7rem;
+  color: #2563eb;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 26px;
+  font-size: 0.85rem;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #374151;
+}
+
+.forgot {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.forgot:hover {
+  color: #1e40af;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 32px rgba(37, 99, 235, 0.35);
+  opacity: 0.96;
+}
+
+.footer {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
