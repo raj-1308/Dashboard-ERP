@@ -1,193 +1,258 @@
-/* Sticky header */
+/* ================= COMPACT TABLE CARD ================= */
+
+/* ================= TABLE CARD ================= */
+
+.table-card {
+  background: linear-gradient(145deg, #020617, #0b1220);
+  border-radius: 14px;
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  max-width: 1100px;
+  margin-top: 12px;
+  margin-left: 50px;
+}
+
+/* ================= TABLE ================= */
+
+.dark-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* 🔥 important for alignment */
+}
+
+/* HEADER */
 .dark-table thead {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  background: #020617;
 }
 
-/* Zebra rows */
-.dark-table tbody tr:nth-child(even) {
-  background: rgba(255, 255, 255, 0.02);
-}
-
-/* Lead user */
-.lead-user {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.lead-user span {
-  display: block;
-  font-size: 12px;
+.dark-table th {
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 11px;
   color: #94a3b8;
+  border-bottom: 1px solid #1e293b;
+  font-weight: 500;
 }
 
-.avatar {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #2563eb, #1e40af);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  color: #fff;
+/* COLUMN WIDTH FIX */
+.dark-table th:nth-child(1),
+.dark-table td:nth-child(1) {
+  width: 40%;
 }
 
-/* Phone */
-.phone-link {
-  color: #93c5fd;
-  text-decoration: none;
+.dark-table th:nth-child(2),
+.dark-table td:nth-child(2) {
+  width: 20%;
 }
 
-.phone-link:hover {
-  text-decoration: underline;
+.dark-table th:nth-child(3),
+.dark-table td:nth-child(3) {
+  width: 20%;
 }
 
-/* Actions */
-.center {
+.dark-table th:nth-child(4),
+.dark-table td:nth-child(4) {
+  width: 20%;
   text-align: center;
 }
 
+/* BODY */
+.dark-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #1e293b;
+  vertical-align: middle;
+}
+
+/* ================= ROW ================= */
+
+.dark-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.dark-table tbody tr:hover {
+  background: rgba(59,130,246,0.06);
+}
+
+/* ================= USER ================= */
+
+.lead-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* avatar */
+.avatar {
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+/* text */
+.lead-user strong {
+  font-size: 13px;
+  color: #e2e8f0;
+}
+
+.lead-user span {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* ================= PHONE ================= */
+
+.phone-link {
+  font-size: 13px;
+  color: #60a5fa;
+  text-align: left;
+}
+
+/* ================= STATUS ================= */
+
+.status-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 999px;
+}
+
+/* ================= ACTIONS ================= */
+
 .actions {
-  opacity: 0;
-  transition: opacity 0.25s ease;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0.6;
+  transition: 0.2s;
 }
 
 .dark-table tbody tr:hover .actions {
   opacity: 1;
 }
 
+/* buttons */
 .actions button {
-  padding: 6px 12px;
-  border-radius: 8px;
-  font-size: 12px;
-  border: none;
-  cursor: pointer;
-  margin: 0 4px;
-}
-
-.btn-view {
-  background: #1e40af;
-  color: #fff;
-}
-
-.btn-call {
-  background: #065f46;
-  color: #d1fae5;
-}
-.btn-delete {
-  background: #b91c1c;
-  color: #fee2e2;
-}
-.btn-call:hover {
-  background: #047857;
-}
-.btn-view:hover {
-  background: #1d4ed8;
-}
-.btn-delete:hover {
-  background: #991b1b;
-}
-/* Status Badge */
-.status-badge {
-  display: inline-block;
   padding: 4px 8px;
-  border-radius: 12px;
-  font-size: 12px;
-  font-weight: 600;
-  color: #fff;
-}
-.status-contacted {
-  background-color: #16a34a;
-}
-.status-pending {
-  background-color: #f59e0b;
-}
-.status-new {
-  background-color: #3b82f6;
-}
-.status-lost {
-  background-color: #ef4444;
-}
-.status-converted {
-  background-color: #8b5cf6;
+  font-size: 10px;
+  border-radius: 6px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .lead-user span {
-    display: none;
-  }
-  .actions button {
-    padding: 4px 8px;
-    font-size: 10px;
-    margin: 0 2px;
-  }
-  .avatar {
-    width: 28px;
-    height: 28px;
-    font-size: 14px;
-  }
+/* ================= HEADER ALIGN FIX ================= */
+
+.dark-table th:last-child {
+  text-align: center;
 }
 
-/* Table styles */
-.dark-table {
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #1e293b;
-  color: #f1f5f9;
-}
-.dark-table th,
-.dark-table td {
-  padding: 12px 16px;
-  border-bottom: 1px solid #334155;
-  text-align: left;
-}
-.dark-table th {
-  background-color: #0f172a;
-  font-weight: 600;
-  font-size: 14px;
-}                           
-.dark-table td {
-  font-size: 13px;
-}
-.dark-table tbody tr:hover {
-  background-color: #334155;
-}
+/* ================= SCROLL ================= */
 
-/* Scrollbar styling */
 .dark-table tbody {
-  display: block;
-  max-height: 400px;
+  max-height: 360px;
   overflow-y: auto;
 }
-.dark-table tbody::-webkit-scrollbar {
-  width: 8px;
-}
-.dark-table tbody::-webkit-scrollbar-thumb {
-  background-color: #475569;
-  border-radius: 4px;
-}
-.dark-table tbody::-webkit-scrollbar-thumb:hover {
-  background-color: #64748b;
-}
-.dark-table thead,
-.dark-table tbody tr {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-}
-.dark-table thead {
-  width: calc(100% - 8px);
-}
-.dark-table tbody tr {
-  width: calc(100% - 8px);
+
+/* ================= CLEAN LOOK ================= */
+
+.dark-table tbody tr:last-child td {
+  border-bottom: none;
 }
 
-/* Hover effect for rows */
-.dark-table tbody tr:hover {
-  background-color: #334155;
+/* ================= USER ================= */
+
+.lead-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-/* Sticky header */
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  font-size: 13px;
+}
+
+/* name */
+.lead-user strong {
+  font-size: 13px;
+}
+
+/* email */
+.lead-user span {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* ================= PHONE ================= */
+
+.phone-link {
+  font-size: 13px;
+  color: #60a5fa;
+}
+
+/* ================= STATUS ================= */
+
+.status-badge {
+  padding: 4px 8px;
+  font-size: 10px;
+  border-radius: 999px;
+}
+
+/* ================= ACTIONS ================= */
+
+.actions button {
+  padding: 4px 8px;
+  font-size: 10px;
+  border-radius: 6px;
+}
+
+/* show actions slightly (not fully hidden) */
+.actions {
+  opacity: 0.6;
+}
+
+.dark-table tbody tr:hover .actions {
+  opacity: 1;
+}
+
+/* ================= SCROLL ================= */
+
+.dark-table tbody {
+  max-height: 360px;
+}
+
+/* ================= HEADER STICKY ================= */
+
+.dark-table thead {
+  position: sticky;
+  top: 0;
+  background: #020617;
+}
+.dark-table thead th {
+  background: #020617;
+  z-index: 1;
+}
+.dark-table thead th::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: #1e293b;
+}
+@media (max-width: 768px) {
+  .suppliers-full,
+  .dashboard-page,
+  .leads-section {
+    padding: 12px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

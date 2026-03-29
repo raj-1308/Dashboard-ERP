@@ -6,27 +6,27 @@ import "./Layout.css";
 export default function Layout() {
   const location = useLocation();
 
-  // Check if current page is Settings
-  const isSettingsPage = location.pathname === "/settings";
+  const noHeaderRoutes = ["/suppliers", "/reports"];
+  const hideHeader = noHeaderRoutes.includes(location.pathname);
 
   return (
-    <div className={`app-layout ${isSettingsPage ? "settings-layout" : ""}`}>
+    <div className="app-layout">
       
-      {/* Sidebar (hide on settings) */}
-      {!isSettingsPage && <Sidebar />}
+      {/* Sidebar */}
+      <Sidebar />
 
-      {/* Main Area */}
-      <div className="main-content">
+      {/* Main Content Wrapper */}
+      <main className="main-content">
         
-        {/* Header (hide on settings) */}
-        {!isSettingsPage && <Header />}
+        {/* Header */}
+        {!hideHeader && <Header />}
 
-        {/* Page Content */}
+        {/* Scrollable Page Area */}
         <div className="page-content">
           <Outlet />
         </div>
 
-      </div>
+      </main>
     </div>
   );
 }

@@ -8,6 +8,10 @@ import Dashboard from "./Components/pages/Dashboard";
 import Leads from "./Components/pages/Leads";
 import Reports from "./Components/pages/Reports";
 import Settings from "./Components/pages/Settings";
+import Customer from "./Components/pages/Customer";
+import Analytics from "./Components/pages/Analytics"; 
+import Inventory from "./Components/pages/Inventory";
+import Suppliers from "./Components/pages/Supply";
 
 export default function App() {
   return (
@@ -24,10 +28,15 @@ export default function App() {
 
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/leads" element={<Leads />} />
-          <Route path="/reports" element={<Reports />} />   
+          <Route path="/reports" element={<Reports />} />  
+          <Route path="/suppliers" element={<Suppliers />} /> 
+          
           
         </Route>
         <Route path="/settings" element={<Settings />} />
+        <Route path="/customers" element={<Customer />} />
+        <Route path="/analytics" element={<Analytics />} />
+        <Route path="/inventory" element={<Inventory />} />
 
 
       </Routes>

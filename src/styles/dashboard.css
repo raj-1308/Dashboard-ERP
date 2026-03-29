@@ -1,86 +1,208 @@
-/* ===== DASHBOARD MAIN LAYOUT ===== */
+/* ================= ROOT PAGE ================= */
 
 .dashboard-page {
   display: flex;
   flex-direction: column;
   gap: 28px;
+  padding: 24px;
+  background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
+  min-height: 100vh;
+  animation: fadeIn 0.4s ease;
 }
 
-.dashboard-grid {
-  display: flex;
-  gap: 28px;
-  align-items: flex-start;
-}
+/* ================= HEADER ================= */
 
-/* Left main content area */
-.dashboard-main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-/* Right side panel (for Profile Card later) */
-.dashboard-side {
-  width: 340px;
-  position: sticky;
-  top: 24px;
-}
-
-/* Section title */
 .dashboard-title {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: 700;
   color: #0f172a;
-  margin-bottom: 6px;
+  letter-spacing: -0.5px;
 }
 
 .dashboard-subtitle {
   font-size: 14px;
   color: #64748b;
-  margin-bottom: 20px;
 }
 
-/* ===== KPI SECTION WRAPPER ===== */
+/* ================= GRID ================= */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ================= MAIN ================= */
+
+.dashboard-main {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ================= SIDE ================= */
+
+.dashboard-side {
+  width: 100%;
+  max-width: 340px;
+  position: sticky;
+  top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ================= KPI ================= */
 
 .dashboard-kpi-section {
-  animation: fadeIn 0.6s ease;
+  animation: fadeInUp 0.5s ease;
 }
 
-/* ===== FUTURE SECTIONS PLACEHOLDER STYLE ===== */
+/* ================= CARD SYSTEM ================= */
+
+.dashboard-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* subtle top gradient accent */
+.dashboard-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: linear-gradient(90deg, #3b82f6, #22c55e);
+  opacity: 0.8;
+}
+
+/* hover interaction */
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* ================= LARGE CARD ================= */
+
+.dashboard-card.large {
+  min-height: 200px;
+}
+
+/* ================= SECTION ================= */
 
 .dashboard-section {
   background: #ffffff;
   border-radius: 16px;
   padding: 22px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-  animation: fadeIn 0.6s ease;
+  border: 1px solid #e2e8f0;
+  transition: 0.25s;
 }
+
+.dashboard-section:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+}
+
+/* ================= TEXT ================= */
 
 .dashboard-section-title {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: 600;
   color: #0f172a;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
-/* ===== RESPONSIVE ===== */
+.muted {
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* ================= LIST ================= */
+
+.activity-list {
+  padding-left: 16px;
+  color: #475569;
+}
+
+.activity-list li {
+  margin-bottom: 6px;
+  transition: 0.2s;
+}
+
+.activity-list li:hover {
+  color: #0f172a;
+}
+
+/* ================= INPUT / SEARCH ================= */
+
+.dashboard-search {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+  transition: 0.25s;
+}
+
+.dashboard-search:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59,130,246,0.15);
+}
+
+/* ================= PROFILE ================= */
+
+.profile-mini {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.profile-name {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.profile-role {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media (max-width: 1200px) {
   .dashboard-grid {
-    flex-direction: column;
+    grid-template-columns: 1fr;
   }
 
   .dashboard-side {
-    width: 100%;
+    max-width: 100%;
     position: relative;
     top: 0;
   }
 }
 
-/* ===== ANIMATION ===== */
+/* ================= ANIMATIONS ================= */
 
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
   from {
     opacity: 0;
     transform: translateY(14px);
@@ -88,5 +210,20 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@media (max-width: 768px) {
+  .suppliers-full,
+  .dashboard-page,
+  .leads-section {
+    padding: 12px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
   }
 }
